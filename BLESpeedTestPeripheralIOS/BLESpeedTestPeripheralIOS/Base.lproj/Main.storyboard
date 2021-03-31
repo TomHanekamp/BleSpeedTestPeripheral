@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BLESpeedTestPeripheralIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLJ-is-0YE">
+                                <rect key="frame" x="150" y="72" width="114" height="30"/>
+                                <state key="normal" title="Start advertising"/>
+                                <connections>
+                                    <action selector="startAdvertising:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fC7-tj-Vdm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjR-19-MOX">
+                                <rect key="frame" x="150.5" y="119" width="113" height="30"/>
+                                <state key="normal" title="Stop advertising"/>
+                                <connections>
+                                    <action selector="stopAdvertising:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGG-ee-RcD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cEC-g5-veK">
+                                <rect key="frame" x="20" y="222" width="374" height="640"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYu-qU-7s0">
+                                <rect key="frame" x="176.5" y="184" width="61" height="30"/>
+                                <state key="normal" title="Clear log"/>
+                                <connections>
+                                    <action selector="clearLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="isC-k1-YRP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JLJ-is-0YE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="2Vm-E2-FAG"/>
+                            <constraint firstItem="cEC-g5-veK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="178" id="5lv-bg-g0y"/>
+                            <constraint firstItem="yYu-qU-7s0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kfu-vf-Ird"/>
+                            <constraint firstItem="yYu-qU-7s0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="Kly-sQ-xuX"/>
+                            <constraint firstItem="JLJ-is-0YE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UDe-At-bjH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cEC-g5-veK" secondAttribute="bottom" id="YaA-E4-SF5"/>
+                            <constraint firstItem="UjR-19-MOX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eFB-q0-LJ0"/>
+                            <constraint firstItem="cEC-g5-veK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kah-vC-3kf"/>
+                            <constraint firstItem="UjR-19-MOX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="lD6-k1-Aur"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cEC-g5-veK" secondAttribute="trailing" constant="20" id="sSH-7E-x8g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logView" destination="cEC-g5-veK" id="sNh-X4-wbJ"/>
+                        <outlet property="startButton" destination="JLJ-is-0YE" id="Joq-yO-iff"/>
+                        <outlet property="stopButton" destination="UjR-19-MOX" id="2gw-ku-i5o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
